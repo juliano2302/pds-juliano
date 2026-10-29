@@ -1,100 +1,72 @@
+### ================================
+### ROTAS DE DONOS
+### ================================
+
 ### Listar todos os donos
 GET http://localhost:5000/donos
 
-### Buscar um dono pelo id
+### Buscar dono por ID
 GET http://localhost:5000/donos/1
 
-### Cadastrar um novo dono
+### Criar novo dono
 POST http://localhost:5000/donos
 Content-Type: application/json
 
 {
-    "nome": "Diego Souza",
-    "telefone": "45999110004"
+  "nome": "Ana Paula Ribeiro",
+  "telefone": "45999110001"
 }
 
-### Atualizar um dono
+### Atualizar dono
 PUT http://localhost:5000/donos/1
 Content-Type: application/json
 
 {
-    "nome": "Ana Paula Ribeiro da Silva",
-    "telefone": "45999110001"
+  "nome": "Ana Paula Ribeiro",
+  "telefone": "45999110000"
 }
 
-### Remover um dono
-DELETE http://localhost:5000/donos/3
+### Remover dono
+DELETE http://localhost:5000/donos/1
+
+### Listar pets de um dono
+GET http://localhost:5000/donos/1/pets
 
 
-### ----------------------------------------------------------
-### DAQUI PARA BAIXO SAO AS ROTAS QUE VOCE VAI ESCREVER
-### Elas so vao funcionar depois que voce criar as rotas de pets
-### no arquivo app.py
-### ----------------------------------------------------------
-### Listar todos os pets (com o nome do dono)
+### ================================
+### ROTAS DE PETS
+### ================================
+
+### Listar todos os pets
 GET http://localhost:5000/pets
 
-### Listar apenas os pets de um dono (filtro por query param)
+### Listar pets com filtro por dono (Query Param)
 GET http://localhost:5000/pets?dono_id=1
 
-### Buscar um pet pelo id
+### Buscar pet por ID
 GET http://localhost:5000/pets/1
 
-### Cadastrar um novo pet
+### Criar novo pet
 POST http://localhost:5000/pets
 Content-Type: application/json
 
 {
-    "nome": "Bidu",
-    "especie": "cachorro",
-    "idade": 2,
-    "dono_id": 1
+  "nome": "Bidu",
+  "especie": "cachorro",
+  "idade": 2,
+  "dono_id": 1
 }
 
-### Atualizar um pet
+### Atualizar pet
 PUT http://localhost:5000/pets/1
 Content-Type: application/json
 
 {
-    "nome": "Rex",
-    "especie": "cachorro",
-    "idade": 5,
-    "dono_id": 1
+  "nome": "Rex",
+  "especie": "cachorro",
+  "idade": 5,
+  "dono_id": 1
 }
 
-### Remover um pet
+### Remover pet
 DELETE http://localhost:5000/pets/1
-
-### Listar todos os pets (com o nome do dono)
-GET http://localhost:5000/pets
-
-### Listar apenas os pets de um dono (filtro por query param)
-GET http://localhost:5000/pets?dono_id=1
-
-### Buscar um pet pelo id
-GET http://localhost:5000/pets/1
-
-### Cadastrar um novo pet
-POST http://localhost:5000/pets
-Content-Type: application/json
-
-{
-    "nome": "Bidu",
-    "especie": "cachorro",
-    "idade": 2,
-    "dono_id": 1
-}
-
-### Atualizar um pet
-PUT http://localhost:5000/pets/1
-Content-Type: application/json
-
-{
-    "nome": "Rex",
-    "especie": "cachorro",
-    "idade": 5,
-    "dono_id": 1
-}
-
-### Remover um pet
-DELETE http://localhost:5000/pets/5
